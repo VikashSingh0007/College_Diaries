@@ -12,7 +12,7 @@ const path = require("path")
 const authRoute = require("./routes/auth")
 const authUser = require("./routes/user")
 const authPost = require("./routes/posts")
-const authCat = require("./routes/categories")
+
 
 
 dotenv.config()
@@ -51,7 +51,7 @@ app.post("/upload", upload.single("file"), (req, res) => {
 app.use("/auth", authRoute)
 app.use("/users", authUser)
 app.use("/posts", authPost)
-app.use("/category", authCat)
+
 
 
 app.listen("5000", () => {
