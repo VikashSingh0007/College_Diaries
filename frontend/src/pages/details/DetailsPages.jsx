@@ -1,7 +1,6 @@
 import React, { useContext, useEffect, useState } from "react"
 import "./details.css"
 import "../../components/header/header.css"
-import img from "../../assets/images/product1.jpg"
 import { useLocation } from "react-router-dom"
 import axios from "axios"
 import { Link } from "react-router-dom"
