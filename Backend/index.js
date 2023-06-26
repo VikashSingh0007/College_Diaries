@@ -11,7 +11,7 @@ const path = require("path")
 
 const authRoute = require("./routes/auth")
 const authUser = require("./routes/user")
-const authPost = require("./routes/posts")
+const authPost = require("./routes/post")
 
 
 

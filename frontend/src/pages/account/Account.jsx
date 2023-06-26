@@ -39,7 +39,7 @@ export const Account = () => {
       }
     }
     try {
-      const res = await axios.put("/users/" + user._id, updateUser)
+      const res = await axios.put("/users" + user._id, updateUser)
       setSucc(true)
       dispatch({ type: "UPDATE_SUCC", payload: res.data })
       window.location.reload()
