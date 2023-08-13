@@ -66,17 +66,18 @@ export const Category = () => {
         <div className='content'>
           <Slider {...settings}>
             {category.map((item) => (
-              <div className='boxs'>
+                <Link to={`${item.url}`} className='link'><div className='boxs'>
                 <div className='box' key={item.id}>
                   <img src={item.cover} alt='cover' />
                   <div className='overlay'>
-                    <Link to={`/?cat=${item.name}`} className='link'>
+                  
                       <h4>{item.category}</h4>
-                    </Link>
+                   
                     <p>{item.title}</p>
                   </div>
                 </div>
               </div>
+              </Link>
             ))}
           </Slider>
         </div>
