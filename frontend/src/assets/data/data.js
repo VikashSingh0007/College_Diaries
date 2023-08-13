@@ -10,16 +10,16 @@ export const category = [
   {
     id: 1,
     category: "IIT BHU",
-    title: "IITian in Hindu",
+    title: "Kashi Talks",
     cover: "../images/category/ca1.jpg",
-    url: "/IITBHU",
+    url: "IITBHU",
   },
   {
     id: 2,
-    category: "IIT Guhwati",
-    title: "chill gesture",
-    cover: "../images/category/ca4.jpg",
-    url: "/IITGUHWATI",
+    category: "MNNIT",
+    title: "Moties Hideout",
+    cover: "../images/category/ca2.jpg",
+    url: "/MNNIT",
     
   },
   {
@@ -31,10 +31,10 @@ export const category = [
   },
   {
     id: 4,
-   category: "MNNIT",
-    title: "Moties Hideout",
-    cover: "../images/category/ca2.jpg",
-    url: "/MNNIT",
+  category: "IIT Guhwati",
+    title: "chill gesture",
+    cover: "../images/category/ca4.jpg",
+    url: "/IITGUHWATI",
   },
   {
     id: 5,
@@ -46,14 +46,14 @@ export const category = [
   {
     id: 6,
     category: "IIT Bombay",
-    title: "Sugar Daddy",
+    title: "The Marine Ride",
     cover: "../images/category/ca6.jpg",
     url: "/IITBOMBAY",
   },
   {
     id: 7,
     category: "Bits Pilani",
-    title: "wealthiest Brad",
+    title: "wealthiest Brat",
     cover: "../images/category/ca7.jpg",
     url: "/BITSPILANI",
   },
