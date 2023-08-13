@@ -13,6 +13,7 @@ export const Card = ({ posts }) => {
       <section className='blog'>
         <div className='container grid3'>
           {posts.map((item) => (
+             <Link to={`/post/${item._id}`}>
             <div className='box boxItems' key={item.id}>
               {/* first ma yo  <div className='img'>{item.photo && <img src={item.cover} alt='' />}</div>*/}
               <div className='img'>{item.photo && <img src={PublicFlo + item.photo} alt='' />}</div>
@@ -23,9 +24,9 @@ export const Card = ({ posts }) => {
                     <a href='/'>#{c.name}</a>
                   ))}
                 </div>
-                <Link to={`/post/${item._id}`}>
+                <h1><b>{item.Clgname}</b></h1>
                   <h3>{item.title}</h3>
-                </Link>
+                
                 {/* <p>{item.desc.slice(0, 180)}...</p> */}
                 {item.desc && item.desc.length > 180 ? (
   <p>{item.desc.slice(0, 180)}...</p>
@@ -39,7 +40,7 @@ export const Card = ({ posts }) => {
                   <AiOutlineShareAlt className='icon' /> <label htmlFor=''>SHARE</label>
                 </div>
               </div>
-            </div>
+            </div></Link>
           ))}
         </div>
       </section>
