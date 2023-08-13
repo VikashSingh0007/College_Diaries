@@ -38,7 +38,7 @@ export const User = () => {
                     </div>
                     <div className='text'>
                       <h4>{user.username}</h4>
-                      <label>Los Angeles, CA</label>
+                      
                     </div>
                   </div>
                 </Link>
@@ -51,14 +51,6 @@ export const User = () => {
                 <button className='box'>
                   <IoSettingsOutline className='icon' />
                   <h4>My Account</h4>
-                </button>
-                <button className='box'>
-                  <BsBagCheck className='icon' />
-                  <h4>My Order</h4>
-                </button>
-                <button className='box'>
-                  <AiOutlineHeart className='icon' />
-                  <h4>Wishlist</h4>
                 </button>
                 <button className='box'>
                   <GrHelp className='icon' />
