@@ -10,6 +10,7 @@ import { useLocation } from "react-router-dom"
 export const Create = () => {
   const [title, setTitle] = useState("")
   const [desc, setDesc] = useState("")
+  const [Clgname, setClgname] = useState("")
   const [file, setFile] = useState(null)
   const { user } = useContext(Context)
 
@@ -19,6 +20,7 @@ export const Create = () => {
     const newPost = {
       username: user.username,
       title,
+      Clgname,
       desc,
       file,
     }
@@ -54,8 +56,9 @@ export const Create = () => {
               </label>
               <input type='file' id='inputfile' style={{ display: "none" }} onChange={(e) => setFile(e.target.files[0])} />
             </div>
+            <input type='text' placeholder='College Name' onChange={(e) => setClgname(e.target.value)} />
             <input type='text' placeholder='Title' onChange={(e) => setTitle(e.target.value)} />
-            <textarea name='' id='' cols='30' rows='10' onChange={(e) => setDesc(e.target.value)}></textarea>
+            <textarea name='' placeholder='Blog' id='' cols='30' rows='10' onChange={(e) => setDesc(e.target.value)}></textarea>
             <button className='button'>Create Post</button>
           </form>
         </div>
