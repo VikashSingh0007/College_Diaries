@@ -1,13 +1,15 @@
 header {
   background: #fff;
-  padding: 20px;
+  padding: 0px;
   box-shadow: 0 2px 4px rgb(0 0 0 / 8%);
   position: relative;
   z-index: 44;
+
 }
 /* nav */
 nav ul {
   display: flex;
+  transform: translateX(20px);
 }
 nav a {
   text-transform: capitalize;
@@ -42,7 +44,8 @@ nav a {
   position: absolute;
   top: 80px;
   right: 10px;
-  width: 250px;
+  width: 220px;
+  height: 250px;
   background: #fff;
 }
 .openProfile .box {
@@ -81,3 +84,20 @@ header.active {
     display: none;
   }
 }
+.Tag{
+
+  font-size: 20px;
+
+}
+
+.centre{
+  font-family: 'Borel', cursive;
+  font-size: 30px;
+  color:white;
+  background-color: black;
+  border-radius: 15px;
+height: 90px;
+transform: translateX(-70px);
+  
+}
+
