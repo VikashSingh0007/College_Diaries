@@ -93,9 +93,8 @@ header.active {
 .centre{
   font-family: 'Borel', cursive;
   font-size: 30px;
-  color:white;
-  background-color: black;
-  border-radius: 15px;
+  color:black;
+border-radius: 15px;
 height: 90px;
 transform: translateX(-70px);
   
