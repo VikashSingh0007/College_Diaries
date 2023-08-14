@@ -14,18 +14,24 @@ export const Header = () => {
     <>
       <header className='header'>
         <div className='scontainer flex'>
-          {/* <div className='logo'>
-            <img src={logo} alt='logo' width='100px' />
-          </div> */}
+        
           <nav>
             <ul>
+              
               {nav.map((link) => (
                 <li key={link.id}>
-                  <Link to={link.url}>{link.text}</Link>
+                 
+                  <Link to={link.url}><b className="Tag ">{link.text}</b></Link>
+                  
                 </li>
               ))}
+             
             </ul>
+          
           </nav>
+          <div className="centre">
+            <h1 className="innerc">College Diaries</h1>
+          </div>
           <div className='account flexCenter'>
             <User />
           </div>
