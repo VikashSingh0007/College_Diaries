@@ -7,6 +7,7 @@ import { BiLogOut } from "react-icons/bi"
 import { RiImageAddLine } from "react-icons/ri"
 import { Context } from "../../context/Context"
 import { Link } from "react-router-dom"
+import { BsFillPersonFill } from "react-icons/bs";
 
 export const User = () => {
   const { user, dispatch } = useContext(Context)
@@ -20,34 +21,65 @@ export const User = () => {
   }
 
   const PublicFlo = "http://localhost:5000/images/"
+const mystyle={
 
+fontSize :"20px",
+transform: "TranslateX(-20px)"
+};
+const mystyle3={
+
+  color:"black",
+  transform: "Translate(30px, 10px)"
+  
+  };
+const mystyle2={
+
+  height:"50px",
+  width:"50px",
+  transform: "TranslateX(-20px)"
+  };
+  const mystyle5={
+
+    height:"50px",
+    width:"50px",
+   
+    };
+  const mystyle4={
+
+    transform: "TranslateY(-20px)",
+    paddingBottom:"10px"
+  
+    };
   return (
     <>
       <div className='profile'>
         {user ? (
           <>
             <button className='img' onClick={() => setProfileOpen(!profileOpen)}>
-              <img src={PublicFlo + user.profilePic} alt='' />
+              {user.profilePic ?<img src={PublicFlo + user.profilePic} alt='' />:<BsFillPersonFill style={mystyle2} />}
             </button>
             {profileOpen && (
               <div className='openProfile boxItems' onClick={close}>
-                <Link to={"/account"}>
+               
                   <div className='image'>
                     <div className='img'>
-                      <img src={PublicFlo + user.profilePic} alt='' />
+                    {user.profilePic ?<img src={PublicFlo + user.profilePic} alt='' />:<BsFillPersonFill style={mystyle5}/>}
                     </div>
+                    <Link style={mystyle3} to={"/account"}>
                     <div className='text'>
-                      <h4>{user.username}</h4>
-                      
+                      <h2 >{user.username}</h2>
+                     
                     </div>
+                    </Link>
                   </div>
-                </Link>
+                  <div style={mystyle4} >
                 <Link to='/create'>
                   <button className='box'>
                     <RiImageAddLine className='icon' />
                     <h4>Create Post</h4>
                   </button>
                 </Link>
+                
                 <button className='box'>
                   <IoSettingsOutline className='icon' />
                   <h4>My Account</h4>
@@ -61,11 +93,12 @@ export const User = () => {
                   {user && <h4>Log Out</h4>}
                 </button>
               </div>
+              </div>
             )}
           </>
         ) : (
           <Link to='/login'>
-            <button>My Account</button>
+            <button style={mystyle}><b>My Account</b></button>
           </Link>
         )}
       </div>
