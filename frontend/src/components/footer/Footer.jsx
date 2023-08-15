@@ -24,7 +24,7 @@ export const Footer = () => {
     <>
       <footer style={mystyle} className='boxItems'>
         <div className='container flex'>
-          <p style={mystyle3}>MADE WITH lOVE AR & VS & AT</p>
+          <p style={mystyle3}>MADE WITH lOVE AR & VS & AT & AM</p>
           <div className='social'   >
            <a style={{
  color:"black"

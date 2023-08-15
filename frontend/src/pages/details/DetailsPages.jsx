@@ -59,7 +59,7 @@ export const DetailsPages = () => {
     <>
       <section className='singlePage'>
         <div className='container'>
-          <div className='left'>{post.photo && <img src={PublicFlo + post.photo} alt='' />}</div>
+          <div className='left'>{post.photo && <img src={post.photo.url} alt='' />}</div>
           <div className='right'>
             {post.username === user?.username && (
               <div className='buttons'>

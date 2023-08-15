@@ -1,9 +1,20 @@
 const router = require("express").Router()
 const Post = require("../model/Post")
-
+const cloudinary = require('cloudinary').v2;
 
 router.post("/", async (req, res) => {
   const newPost = new Post(req.body)
+  const postImg = req.body.postImg
+  let cloudImg = "";
+        if (postImg) {
+            cloudImg = await cloudinary.uploader.upload(postImg, {
+                folder: 'postImg'
+            })
+  }
+  newPost.photo = {
+    publicId: cloudImg.public_id,
+    url: cloudImg.url
+  }
   try {
     const savePost = await newPost.save()
     res.status(200).json(savePost)

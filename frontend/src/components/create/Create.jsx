@@ -11,9 +11,20 @@ export const Create = () => {
   const [title, setTitle] = useState("")
   const [desc, setDesc] = useState("")
   const [Clgname, setClgname] = useState("")
-  const [file, setFile] = useState(null)
   const { user } = useContext(Context)
+  const [postImg, setPostImg] = useState("");
 
+  const handleImageChange = (e) => {
+    const file = e.target.files[0];
+    const fileReader = new FileReader();
+    fileReader.readAsDataURL(file);
+    fileReader.onload = () => {
+        if (fileReader.readyState === fileReader.DONE) {
+            setPostImg(fileReader.result);
+            console.log("img data", fileReader.result);
+        }
+    };
+};
   const handleSubmit = async (e) => {
     e.preventDefault()
 
@@ -22,21 +33,17 @@ export const Create = () => {
       title,
       Clgname,
       desc,
-      file,
+      postImg,
     }
-
-    if (file) {
+ 
+    if (postImg) {
       const data = new FormData()
-      const filename = Date.now() + file.name
+      const filename = postImg
       data.append("name", filename)
-      data.append("file", file)
+      data.append("file", postImg)
       newPost.photo = filename
 
-      try {
-        await axios.post("/upload", data)
-      } catch (error) {
-        console.log(error)
-      }
+      
     }
     try {
       const res = await axios.post("/posts", newPost)
@@ -48,13 +55,13 @@ export const Create = () => {
     <>
       <section className='newPost'>
         <div className='container boxItems'>
-          <div className='img '>{file && <img src={URL.createObjectURL(file)} alt='images' />}</div>
+          <div className='img '>{postImg && <img src={postImg} alt='images' />}</div>
           <form onSubmit={handleSubmit}>
             <div className='inputfile flexCenter'>
               <label htmlFor='inputfile'>
                 <IoIosAddCircleOutline />
               </label>
-              <input type='file' id='inputfile' style={{ display: "none" }} onChange={(e) => setFile(e.target.files[0])} />
+              <input type='file' id='inputfile' accept="image/*" style={{ display: "none" }} onChange={handleImageChange} />
             </div>
             <input type='text' placeholder='College Name' onChange={(e) => setClgname(e.target.value)} />
             <input type='text' placeholder='Title' onChange={(e) => setTitle(e.target.value)} />

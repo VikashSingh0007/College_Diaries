@@ -14,10 +14,13 @@ export const Card = ({ posts }) => {
         <div className='container grid3'>
           {posts.map((item) => (
              <Link to={`/post/${item._id}`}>
-            <div className='box boxItems' key={item.id}>
+              <div className='box boxItems' key={item.id}>
               {/* first ma yo  <div className='img'>{item.photo && <img src={item.cover} alt='' />}</div>*/}
-              <div className='img'>{item.photo && <img src={PublicFlo + item.photo} alt='' />}</div>
-              <div className='details'>
+              {item?.photo?.url && (
+                <div className="img">
+                    <img src={item?.photo?.url} alt="" />
+                </div>
+            )}              <div className='details'>
                 <div className='tag'>
                   <AiOutlineTags className='icon' />
                   {item.categories.map((c) => (

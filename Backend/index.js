@@ -14,10 +14,20 @@ const authUser = require("./routes/user")
 const authPost = require("./routes/post")
 
 
-
+const cloudinary = require("cloudinary").v2;
 dotenv.config()
 
-app.use(express.json())
+// Configuration
+cloudinary.config({
+  secure: true,
+  cloud_name: process.env.CLOUDINARY_CLOUD_NAME,
+  api_key: process.env.CLOUDINARY_API_KEY,
+  api_secret: process.env.CLOUDINARY_API_SECRET,
+});
+
+
+app.use(express.json({ extended: false, limit: '50mb' }))
+app.use(express.urlencoded({ limit: '50mb', extended: false, parameterLimit: 50000 }))
 
 app.use("/images", express.static(path.join(__dirname, "/images")))
 
@@ -33,19 +43,6 @@ mongoose
   .catch((err) => console.log(err))
 
 
-const storage = multer.diskStorage({
-  destination: (req, file, callb) => {
-    callb(null, "images")
-  },
-  filename: (req, file, callb) => {
- 
-    callb(null, req.body.name)
-  },
-})
-const upload = multer({ storage: storage })
-app.post("/upload", upload.single("file"), (req, res) => {
-  res.status(200).json("File has been uploaded")
-})
 
 
 app.use("/auth", authRoute)
