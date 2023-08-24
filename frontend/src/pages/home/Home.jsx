@@ -21,7 +21,7 @@ export const Home = () => {
   }, [search])
   return (
     <>
-    <marquee style={{marginBottom:"-65px",height:"50px"}} behavior="" direction="" ><h1>College Survival Guide !</h1></marquee>
+    <marquee style={{marginBottom:"-65px",height:"50px"}} behavior="" direction="" ><h1>! Your's Truely, College Guide !</h1></marquee>
       <Category />
       <Card posts={posts} />
     </>
