@@ -3,17 +3,7 @@ export const nav = [
     id: 1,
     text: "BLOGS",
     url: "/",
-  },
-  {
-    id: 2,
-    text: "ABOUT",
-    url: "/about",
-  },
-  {
-    id: 3,
-    text: "RULES",
-    url: "/rules",
-  },
+  }
 
 ]
 export const category = [
